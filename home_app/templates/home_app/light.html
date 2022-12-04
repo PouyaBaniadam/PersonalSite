@@ -1,0 +1,345 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="Name of your web site">
+    <meta name="author" content="Marketify">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ about_me_datas.website_name }}</title>
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+            rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+            rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/colors.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+
+</head>
+
+<body>
+
+<div id="preloader">
+    <div class="loader_line"></div>
+</div>
+
+
+<div class="tokyo_tm_all_wrap" data-magic-cursor="" data-color="black">
+
+
+    <div class="tokyo_tm_modalbox">
+        <div class="box_inner">
+            <div class="close">
+                <a href="#"><img class="svg" src="{% static 'img/svg/cancel.svg' %}" alt=""/></a>
+            </div>
+            <div class="description_wrap"></div>
+        </div>
+    </div>
+
+
+    <div class="tokyo_tm_modalbox_about">
+        <div class="box_inner">
+            <div class="close">
+                <a href="#"><img class="svg" src="{% static 'img/svg/cancel.svg' %}" alt=""/></a>
+            </div>
+            <div class="description_wrap">
+                <div class="my_box">
+                    <div class="left">
+                        <div class="about_title">
+                            <h3>مهارت های برنامه نویسی</h3>
+                        </div>
+                        <div class="tokyo_progress">
+                            {% for programming_experience_data in programming_experience_datas %}
+                                <div class="progress_inner" data-value="{{ programming_experience_data.percentage }}">
+                                    <span><span class="label">{{ programming_experience_data.title }}</span><span
+                                            class="number">{{ programming_experience_data.percentage }}%</span></span>
+                                    <div class="background">
+                                        <div class="bar">
+                                            <div class="bar_in"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="about_title">
+                            <h3>مهارت های غیر برنامه نویسی</h3>
+                        </div>
+                        <div class="tokyo_progress">
+                            {% for other_experience_data in other_experience_datas %}
+                                <div class="progress_inner" data-value="{{ other_experience_data.percentage }}">
+                                    <span><span class="label">{{ other_experience_data.title }}</span><span
+                                            class="number">{{ other_experience_data.percentage }}%</span></span>
+                                    <div class="background">
+                                        <div class="bar">
+                                            <div class="bar_in"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="counter">
+                    <div class="about_title">
+                        <h3>توضیحات تکمیلی</h3>
+                    </div>
+                    <ul>
+                        {% for experience_and_stuff in experiences_and_stuff %}
+                            <li>
+                                <div class="list_inner">
+                                    <h3><span class="tokyo_tm_counter" data-from="0"
+                                              data-to="{{ experience_and_stuff.number }}"
+                                              data-speed="2000">0</span></h3>
+                                    <span class="name">{{ experience_and_stuff.title }}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tokyo_tm_mobile_menu">
+        <div class="menu_inner">
+            <div class="menu">
+                <ul>
+                    <li><a href="#home"><img class="svg" src="{% static 'img/svg/home-run.svg' %}" alt=""/></a></li>
+                    <li><a href="#about"><img class="svg" src="{% static 'img/svg/avatar.svg' %}" alt=""/></a></li>
+                    <li><a href="#projects"><img class="svg" src="{% static 'img/svg/paper.svg' %}" alt=""/></a></li>
+                    <li><a href="#contact"><img class="svg" src="{% static 'img/svg/mail.svg' %}" alt=""/></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="leftpart">
+        <div class="leftpart_inner">
+            <div class="menu">
+                <ul>
+                    <li class="active"><a href="#home">خانه</a></li>
+                    <li><a href="#about">درباره من</a></li>
+                    <li><a href="#projects">پروژه ها</a></li>
+                    <li><a href="#contact">ارتباط با من</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="rightpart">
+        <div class="rightpart_in">
+
+            <div id="home" class="tokyo_tm_section active">
+                <div class="container">
+                    <div class="tokyo_tm_home">
+                        <div class="home_content">
+                            <div class="avatar">
+                                <div class="image" data-img-url="{{ about_me_datas.home_image.url }}"></div>
+                            </div>
+                            <div class="details">
+                                <h3 class="name">{{ about_me_datas.name }}</h3>
+                                <p class="job">{{ about_me_datas.occupation }}</p>
+                                <div class="social">
+                                    <ul>
+                                        <li><a href="{{ social_medias.github }}"><img class="svg"
+                                                                                      src="{% static 'img/svg/social/github.svg' %}"
+                                                                                      alt=""/></a></li>
+                                        <li><a href="{{ social_medias.instagram }}"><img class="svg"
+                                                                                         src="{% static 'img/svg/social/insta.svg' %}"
+                                                                                         alt=""/></a></li>
+                                        <li><a href="{{ social_medias.telegram }}"><img class="svg"
+                                                                                        src="{% static 'img/svg/social/telegram.svg' %}"
+                                                                                        alt=""/></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="about" class="tokyo_tm_section">
+                <div class="container">
+                    <div class="tokyo_tm_about">
+                        <div class="about_image">
+                            <img src="{% static 'img/thumbs/4-2.jpg' %}" alt=""/>
+                            <div class="main" data-img-url="{{ about_me_datas.about_me_image.url }}"></div>
+                        </div>
+                        <div class="description">
+                            <h3 class="name">{{ about_me_datas.name }} - <span>{{ about_me_datas.occupation }}</span>
+                            </h3>
+                            <div class="description_inner">
+                                <div class="left">
+                                    <p>{{ about_me_datas.bio }}</p>
+                                    <div class="tokyo_tm_button">
+                                        <a href="">بیشتر بدانید</a>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <ul>
+                                        <li>
+                                            <p><span>روز تولد:</span>{{ about_me_datas.birthday }}</p>
+                                        </li>
+                                        <li>
+                                            <p><span>سن:</span>{{ about_me_datas.age }}</p>
+                                        </li>
+                                        <li>
+                                            <p><span>نشانی:</span>{{ about_me_datas.address }}</p>
+                                        </li>
+                                        <li>
+
+                                            <p><span>ایمیل:</span><a>{{ about_me_datas.email }}</a>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span>تلفن:</span><a
+                                                    href="tel:{{ about_me_datas.number }}">{{ about_me_datas.number }}</a>
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p><span>تحصیل:</span>{{ about_me_datas.university }}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="projects" class="tokyo_tm_section">
+                <div class="container">
+                    <div class="tokyo_tm_news">
+                        <div class="tokyo_tm_title">
+                            <div class="title_flex">
+                                <div class="left">
+                                    <h3>پروژه ها</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <ul>
+                            {% for project in project_datas %}
+                                <li>
+                                    <div class="list_inner">
+                                        <div class="image">
+                                            <img src="{{ project.image.url }}" style="max-height: 400px">
+                                            <div class="main" data-img-url="{{ project.image.url }}"></div>
+                                            <a class="tokyo_tm_full_link" href="#"></a>
+                                        </div>
+                                        <div class="details">
+                                            <div class="extra">
+                                                <div class="short">
+                                                    <p class="date">توسط <a href="#">{{ project.programmer }}</a>
+                                                        <span>{{ project.date }}</span></p>
+                                                </div>
+                                                <div class="my_like">
+                                                    <a download="" href="{{ project.file.url }}"><img
+                                                            style="height: 30px; width: 30px;"
+                                                            src="{% static 'img/svg/download.svg' %}"
+                                                            alt=""/>دانلود</a>
+                                                </div>
+                                            </div>
+                                            <h3 class="title" style="color: red"><a href="#">{{ project.title }}</a>
+                                            </h3>
+                                            <div class="tokyo_tm_read_more">
+                                                <a href="#"><span>ادامه مطلب</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="main_content">
+                                            <div class="descriptions">
+                                                <p class="bigger">{{ project.body|linebreaks }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact" class="tokyo_tm_section">
+                <div class="container">
+                    <div class="tokyo_tm_contact">
+                        <div class="tokyo_tm_title">
+                            <div class="title_flex">
+                                <div class="left">
+                                    <span>ارتباط با من</span>
+                                    <h3>در تماس باشید</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fields">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="returnmessage"
+                                     data-success="Your message has been received, We will contact you soon."></div>
+                                <div class="empty_notice"><span>لطفا فیلدهای مورد نیاز را پر کنید</span></div>
+                                <div class="first">
+                                    <ul>
+                                        <li>
+                                            <label for="name"></label><input id="name" name="name" type="text"
+                                                                             placeholder="نام" required>
+                                        </li>
+                                        <li>
+                                            <label for="phone"></label><input id="phone" name="number" type="text"
+                                                                              placeholder="تلفن (اختیاری)">
+                                        </li>
+                                        <li>
+                                            <label for="email"></label><input id="email" name="email" type="text"
+                                                                              placeholder="ایمیل" required>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="last">
+                                    <label for="message"></label><textarea id="message" name="message"
+                                                                           placeholder="پیغام" required></textarea>
+                                </div>
+                                <button
+                                        style="height: 30px; width: 100px; background-color: rgb(160,78,248);
+                                         color: white; font-size: large;
+                                         border-radius: 10px 20px 10px 20px;">
+                                    پیام فرستادن
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
+
+</div>
+
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<!--[if lt IE 10]> <script type="text/javascript" src="{% static 'js/ie8.js' %}"></script> <![endif]-->
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/init.js' %}"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&amp;callback=initMap"></script>
+
+</body>
+
+</html>

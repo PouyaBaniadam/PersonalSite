@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Name of your web site">
+    <meta name="author" content="Marketify">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>{{ website_name.website_name }}</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/plugins.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/dark.css' %}" />
+    <!--[if lt IE 9]> <script type="text/javascript" src="{% static 'js/modernizr.custom.js' %}"></script> <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="loader_line"></div>
+    </div>
+
+
+    <div class="tokyo_tm_all_wrap" data-magic-cursor="">
+        <div class="tokyo_tm_intro">
+            <div class="short_info">
+                <h3>{{ website_name.website_name }}</h3>
+            </div>
+            <span class="intro_line"></span>
+            <span class="intro_line_2"></span>
+            <span class="intro_line_3"></span>
+            <div class="demos">
+                <div class="left">
+                    <div class="desc">
+                        <img src="{% static 'img/intro/Light preview.png' %}" alt=""/>
+                        <h3 class="title">حالت روشن</h3>
+                    </div>
+                    <a class="intro_link" href="{% url 'home_app:light_home' %}"></a>
+                </div>
+                <div class="right">
+                    <div class="desc">
+                        <img src="{% static 'img/intro/Dark preview.png' %}" alt=""/>
+                        <h3 class="title">حالت تیره</h3>
+                    </div>
+                    <a class="intro_link" href="{% url 'home_app:dark_home' %}"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mouse-cursor cursor-outer"></div>
+        <div class="mouse-cursor cursor-inner"></div>
+
+    </div>
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <!--[if lt IE 10]> <script type="text/javascript" src="{% static 'js/ie8.js' %}"></script> <![endif]-->
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/init.js' %}"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5bpEs3xlB8vhxNFErwoo3MXR64uavf6Y&amp;callback=initMap"></script>
+
+
+
+
+</body>
+
+</html>
