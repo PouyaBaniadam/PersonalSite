@@ -179,7 +179,7 @@
                 <div class="container">
                     <div class="tokyo_tm_about">
                         <div class="about_image">
-                            <img src="{% static 'img/thumbs/4-2.jpg' %}" alt=""/>
+                            <img style="max-height: 550px" src="{{ about_me_datas.about_me_image.url }}" alt=""/>
                             <div class="main" data-img-url="{{ about_me_datas.about_me_image.url }}"></div>
                         </div>
                         <div class="description">
@@ -313,9 +313,9 @@
                                                                            placeholder="پیغام" required></textarea>
                                 </div>
                                 <button
-                                        style="height: 30px; width: 100px; background-color: rgb(160,78,248);
+                                        style="height: 50px; width: 150px; background-color: rgb(200,63,108);
                                          color: white; font-size: large;
-                                         border-radius: 10px 20px 10px 20px;">
+                                         border-radius: 30px 75px 30px 75px;">
                                     پیام فرستادن
                                 </button>
                             </form>
